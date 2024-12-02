@@ -31,7 +31,10 @@ int main(){
   std::sort(list2.begin(), list2.end());
 
   int tot {};
-  for (int i{0}; i < list1.size(); i++)
-  
+  for (int i{0}; i < list1.size(); i++) {
+    tot = list1.at(i) + list2.at(i);
+  }
+
+  std::cout << "\nThe distance between the two lists comes out to a total of " << tot << '\n';
   return 0;
 }
