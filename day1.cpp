@@ -22,7 +22,7 @@ int main(){
   while(infile){
     list1.push_back(temp);
     infile >> temp;
-    list2.push_back(temp)
+    list2.push_back(temp);
     infile >> temp;
   }
   infile.close();
@@ -30,11 +30,19 @@ int main(){
   std::sort(list1.begin(), list1.end());
   std::sort(list2.begin(), list2.end());
 
-  int tot {};
+  int tot {0};
   for (int i{0}; i < list1.size(); i++) {
-    tot = list1.at(i) + list2.at(i);
+    std::cout << '\n' << list1.at(i) << '\t' << list2.at(i);
+    if(list2.at(i) > list1.at(i)){
+      tot += list2.at(i) - list1.at(i);
+    }
+    else{
+      tot += list1.at(i) - list2.at(i);
+    }
   }
 
-  std::cout << "\nThe distance between the two lists comes out to a total of " << tot << '\n';
+  std::cout << '\n' << "\nThe distance between the two lists comes out to a total of " 
+            << tot << '.' << '\n';
+
   return 0;
 }
